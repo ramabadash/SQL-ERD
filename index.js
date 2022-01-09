@@ -7,7 +7,8 @@ const port = process.env.PORT || 3000;
 const app = express();
 // Routers
 const postsRouter = require('./routers/postsRouter');
-const gestRouter = require('./routers/getsRouter');
+const getsRouter = require('./routers/getsRouter');
+const deleteRouter = require('./routers/deleteRouter');
 
 //Connect to db
 const { connect } = require('./db/index');
@@ -25,9 +26,9 @@ app.get('/', function (req, res) {
   res.send('Testing my server');
 });
 
-app.use('/', gestRouter); // Get by id's
-
+app.use('/', getsRouter); // Get by id's
 app.use('/new', postsRouter); // Add new details
+app.use('/remove', deleteRouter); // Remove by id
 
 app.listen(port, () => {
   console.log(`running on ${port}`);
