@@ -39,7 +39,11 @@ request.body = {
 }
 ```
 
----
+### 📍 DeleteRouter -
+
+#### ✔ DELETE /remove/pupil/:pupilID - Delete pupil by id on request params
+
+#### ✔ DELETE /remove/teacher/:teacherID - Delete teacher by id on request params
 
 ## TASK -
 
@@ -96,8 +100,8 @@ request.body = {
 
 ### DELETS
 
-- DELETE /remove/pupil/:pupilID
-- DELETE /remove/teacher/:teacher
+- [x] DELETE /remove/pupil/:pupilID
+- [x] DELETE /remove/teacher/:teacherID
 - Will delete the object at the correct table.
 
 ## Preparation of the work environment:
