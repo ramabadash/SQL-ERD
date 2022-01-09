@@ -16,3 +16,19 @@ exports.addPupil = (req, res) => {
     });
   }
 };
+
+// Add new teacher by obj {"idTeachers": 5, "Name": "Tova", "Phone": "0521356166"}
+exports.addTeachers = (req, res) => {
+  const { idTeachers, Name, Phone } = req.body;
+  // Validate
+  if (!idTeachers || !Name || !Phone) {
+    res.status(400).send('Missing details!');
+  } else {
+    const sql = `INSERT INTO Teachers VALUES ('${idTeachers}', '${Name}', ${Phone})`;
+
+    SQLConnection.query(sql, function (err, result) {
+      if (err) throw err;
+      res.send(`${Name} inserted into table - Teachers`);
+    });
+  }
+};
