@@ -9,6 +9,7 @@ const app = express();
 const postsRouter = require('./routers/postsRouter');
 const getsRouter = require('./routers/getsRouter');
 const deleteRouter = require('./routers/deleteRouter');
+const putsRouter = require('./routers/putsRouter');
 
 //Connect to db
 const { connect } = require('./db/index');
@@ -28,6 +29,7 @@ app.get('/', function (req, res) {
 
 app.use('/', getsRouter); // Get by id's
 app.use('/new', postsRouter); // Add new details
+app.use('/update', putsRouter); // Update by id and details
 app.use('/remove', deleteRouter); // Remove by id
 
 app.listen(port, () => {
