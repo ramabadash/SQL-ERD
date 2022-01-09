@@ -1,5 +1,31 @@
 # Two days Nodejs SQL drill
 
+---
+
+## Use Local -
+
+### 📍 PostRouter -
+
+#### POST /new/pupil :
+
+```
+request.body = {
+    "idPupils": 5, "Name": "Dan", "Classes_idClasses": 23
+}
+```
+
+#### POST /new/teacher :
+
+```
+request.body = {
+    "idTeachers": 5, "Name": "Tova", "Phone": "0521356166"
+}
+```
+
+---
+
+## TASK -
+
 - The task today is to develop a backend which will communicate with mysql db.
 - We will manipulate the database through server endpoints.
 - Before you approach the task, stop and think about what the different tables in the database will look like and how they will communicate with each other.
@@ -106,3 +132,7 @@
 ## Resources:
 
 - [ERD Templates](https://online.visual-paradigm.com/diagrams/templates/entity-relationship-diagram/)
+
+```
+
+```
