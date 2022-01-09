@@ -41,3 +41,17 @@ exports.getPupilById = (req, res) => {
     });
   }
 };
+
+// Get subject by id on request params
+exports.getSubjectById = (req, res) => {
+  const { subjectID } = req.params;
+  if (!subjectID) {
+    res.status(400).send('Missing ID');
+  } else {
+    const sql = `SELECT * FROM Subjects WHERE idSubjects = ${subjectID}`;
+    SQLConnection.query(sql, (err, result) => {
+      if (err) throw err;
+      res.send(JSON.stringify(result));
+    });
+  }
+};
