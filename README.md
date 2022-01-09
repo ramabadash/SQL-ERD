@@ -2,19 +2,19 @@
 
 ---
 
-## Use Local -
+## Use Local - Preparation of the work environment:
 
-## Preparation of the work environment:
+### Without MySQL on your computer : ❌🦈
 
-### Build image:
+#### Build image:
 
     docker build -t node-api:v1 .
 
-### create network
+#### create network
 
     docker network create node-api-network
 
-### Start MYSQL:
+#### Start MYSQL:
 
     docker run \
     --rm \
@@ -27,7 +27,7 @@
     --network node-api-network \
     mysql:8.0
 
-### Start node-api
+#### Start node-api
 
     docker run \
     --rm \
@@ -42,13 +42,21 @@
     docker stop node-app
     docker stop mysql_server
 
-### or start using
+### With MySQL on your computer : ✔🦈
+
+### start using
 
     docker-compose up
 
 ### and stop using
 
     docker-compose down
+
+### Connect with this details:
+
+    user : student
+    password: secret
+    port: 3304
 
 ---
 
