@@ -128,6 +128,16 @@ request.body = {
 
 ---
 
+## Future : 🔮
+
+- **More generic functions - GET, PUT, DELETE**
+- **DB seeding on connection**
+- **ERD repair?**
+- **Error handling**
+- **Good validation for inputs (especially in the body)**
+
+---
+
 ## Task:
 
 ### Please build an `ERD` for the senior class at the school where you attended:
