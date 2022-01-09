@@ -1,7 +1,6 @@
 const { SQLConnection } = require('../db/index');
 
 // Add new pupil by obj {"idPupils": 5, "Name": "Dan", "Classes_idClasses": 23}
-
 exports.addPupil = (req, res) => {
   const { idPupils, Name, Classes_idClasses } = req.body;
   // Validate

@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 // Routers
 const postsRouter = require('./routers/postsRouter');
+const gestRouter = require('./routers/getsRouter');
 
 //Connect to db
 const { connect } = require('./db/index');
@@ -24,18 +25,10 @@ app.get('/', function (req, res) {
   res.send('Testing my server');
 });
 
+app.use('/', gestRouter); // Get by id's
+
 app.use('/new', postsRouter); // Add new details
 
 app.listen(port, () => {
   console.log(`running on ${port}`);
 });
-
-// Fetching number's table
-// app.get('/fetch', function (req, res) {
-//   const sql = `SELECT * FROM numbers`;
-//   SQLConnection.query(sql, function (err, result, fields) {
-//     console.log(result);
-//     if (err) throw err;
-//     res.send(JSON.stringify(result));
-//   });
-// });
