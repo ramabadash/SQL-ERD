@@ -65,10 +65,10 @@ request.body = {
 - GET /:classID
 - Will reply with information about the specific object
 
-### POSTS
+### [X] POSTS
 
-- POST /new/pupil
-- POST /new/teacher
+- [x] POST /new/pupil
+- [x] POST /new/teacher
 - Will create a new object at the correct table with information in the `req.body`
 
 ### PUTS
