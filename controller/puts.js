@@ -19,7 +19,31 @@ exports.updatePupil = (req, res) => {
       Classes_idClasses ? `Classes_idClasses = ${Classes_idClasses}` : ''
     } WHERE idPupils = ${pupilID};`;
 
-    console.log(sql);
+    SQLConnection.query(sql, function (err, result) {
+      if (err) throw err;
+      res.send('Updated');
+    });
+  }
+};
+
+// Update class details by obj on request body {"Name": "5th"}
+// id from request params
+exports.updateClass = (req, res) => {
+  const { classID } = req.params;
+  const { Name } = req.body;
+  // Validate id
+  if (!classID) {
+    return res.status(400).send('Missing ID');
+  }
+  // Validate body
+  if (!Name) {
+    res.status(400).send('Must provide one detail');
+  } else {
+    const sql = `
+      UPDATE Classes SET ${
+        Name ? `Name = "${Name}"` : ''
+      } WHERE idClasses = ${classID};`;
+
     SQLConnection.query(sql, function (err, result) {
       if (err) throw err;
       res.send('Updated');
