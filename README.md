@@ -4,9 +4,26 @@
 
 ## Use Local -
 
+### 📍 GetsRouter -
+
+```
+Return an array with match objects:
+[{"idPupils":2,"Name":"Rama","Classes_idClasses":2}]
+If match not found will return empty array.
+If id is missing will return status code 400 and message "Missing ID"
+```
+
+#### ✔ GET /teacher/:teacherID - Get teacher by id on request params
+
+#### ✔ GET /class/:classID - Get class by id on request params
+
+#### ✔ GET /pupil/:pupilID - Get pupil by id on request params
+
+#### ✔ GET /subject/:subjectID - Get subject by id on request params
+
 ### 📍 PostRouter -
 
-#### POST /new/pupil :
+#### ✔ POST /new/pupil :
 
 ```
 request.body = {
@@ -14,7 +31,7 @@ request.body = {
 }
 ```
 
-#### POST /new/teacher :
+#### ✔ POST /new/teacher :
 
 ```
 request.body = {
@@ -59,13 +76,13 @@ request.body = {
 
 ### GETS
 
-- GET /:teacherID
-- GET /:classID
-- GET /:pupilID
-- GET /:classID
+- [x] GET /:teacherID
+- [x] GET /:classID
+- [x] GET /:pupilID
+- [x] GET /:subjectID
 - Will reply with information about the specific object
 
-### [X] POSTS
+### POSTS
 
 - [x] POST /new/pupil
 - [x] POST /new/teacher
