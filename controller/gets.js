@@ -13,3 +13,17 @@ exports.getTeacherById = (req, res) => {
     });
   }
 };
+
+// Get teacher by id on request params
+exports.getClassById = (req, res) => {
+  const { classID } = req.params;
+  if (!classID) {
+    res.status(400).send('Missing ID');
+  } else {
+    const sql = `SELECT * FROM Classes WHERE idClasses = ${classID}`;
+    SQLConnection.query(sql, (err, result) => {
+      if (err) throw err;
+      res.send(JSON.stringify(result));
+    });
+  }
+};
