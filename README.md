@@ -39,6 +39,29 @@ request.body = {
 }
 ```
 
+### 📍 PutRouter -
+
+#### ✔ PUT update/pupil/:pupilID :
+
+**Update pupil by id on request params**
+**Body Optional - Can send Name / Classes_idClasses / Both**
+
+```
+request.body = {
+    "Name": "Dan", "Classes_idClasses": 23
+}
+```
+
+#### ✔ PUT update/class/:classID :
+
+**Update class by id on request params**
+
+```
+request.body = {
+    "Name": "Math-class"
+}
+```
+
 ### 📍 DeleteRouter -
 
 #### ✔ DELETE /remove/pupil/:pupilID - Delete pupil by id on request params
